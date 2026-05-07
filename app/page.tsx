@@ -3,47 +3,52 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Layers, Compass, BarChart3 } from "lucide-react";
 import { UmbrellaNav } from "@/components/umbrella-nav";
 import { UmbrellaFooter } from "@/components/umbrella-footer";
-import { LAYERS_URL, AMBASSADOR_URL, BENCHMARK_URL } from "@/lib/site-config";
+import {
+  LAYERS_URL,
+  SUPPORT_EMAIL,
+} from "@/lib/site-config";
 
-// Placeholder umbrella copy. CW is delivering positioning + copy in a
-// separate markdown brief. Until that lands, every paragraph here is
-// clearly stub-flagged so it doesn't get mistaken for finished copy.
+// Per-card CTA-link helpers. Layers is live; Ambassador and Benchmark
+// route to a focused mailto until the dedicated subdomains ship.
+const AMBASSADOR_EARLY_ACCESS = `mailto:${SUPPORT_EMAIL}?subject=Ambassador%20early%20access`;
+const BENCHMARK_SAMPLE_AUDIT = `mailto:${SUPPORT_EMAIL}?subject=Benchmark%20sample%20audit`;
+
 const PRODUCTS = [
   {
     slug: "layers",
     name: "Layers",
-    tagline: "Design review overlay for product teams",
+    tagline: "Design review, collapsed.",
     blurb:
-      "[Placeholder copy.] One script tag puts a floating review pill on your staging site. PMs annotate, QA classifies, designers confirm specs, developers read notes — all directly on the live UI.",
+      "A non-destructive review overlay that drops onto any web app via a single script tag. PMs annotate. Designers spec. QA classifies. Devs read implementation notes. Everyone comments — directly on the live UI. Replaces five tools with one source of truth.",
     icon: Layers,
     accent: "#2563eb",
     status: "Public beta",
     href: LAYERS_URL,
-    external: true,
+    cta: "Visit Layers",
   },
   {
     slug: "ambassador",
     name: "Ambassador",
-    tagline: "[Tagline placeholder]",
+    tagline: "Your AI in the meeting. Openly disclosed.",
     blurb:
-      "[Placeholder copy — CW is finalizing positioning.] Ambassador will be revealed when the brand work lands. Until then, this card is structural.",
+      "An AI meeting proxy that joins your Meet, Zoom, or Teams calls, listens in real time, and responds in your cloned voice — under your live override from your phone. For operators stuck in too many low-leverage conversations.",
     icon: Compass,
     accent: "#15803d",
     status: "Coming soon",
-    href: AMBASSADOR_URL,
-    external: true,
+    href: AMBASSADOR_EARLY_ACCESS,
+    cta: "Early access",
   },
   {
     slug: "benchmark",
     name: "Benchmark",
-    tagline: "[Tagline placeholder]",
+    tagline: "Competitive UX intelligence, automated.",
     blurb:
-      "[Placeholder copy — CW is finalizing positioning.] Benchmark will be revealed when the brand work lands. Until then, this card is structural.",
+      "An AI agent runs your exact task as your exact persona across your competitors' websites and tells you what it perceived — ranked by friction, scored on the UI Clutter Index, the first standardized metric built for competitive UX comparison.",
     icon: BarChart3,
     accent: "#9333ea",
     status: "Coming soon",
-    href: BENCHMARK_URL,
-    external: true,
+    href: BENCHMARK_SAMPLE_AUDIT,
+    cta: "Request a sample audit",
   },
 ] as const;
 
@@ -56,19 +61,13 @@ export default function NpireHome() {
         {/* ── Hero ─────────────────────────────────────────────────────── */}
         <section className="px-6 pt-24 pb-20 max-w-4xl mx-auto text-center">
           <Badge variant="secondary" className="mb-6">
-            {/* Placeholder tag — CW will replace */}
-            A small studio shipping focused tools
+            Built by an operator
           </Badge>
           <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
-            {/* Placeholder headline — CW will replace */}
-            Tools for product teams
-            <br />
-            <span className="text-muted-foreground">who care how it ships.</span>
+            AI-native tools, built with twenty years of UX rigor.
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-            {/* Placeholder description — CW will replace */}
-            Three independent products, one shared point of view: review and
-            measure your product against the design, not the spec doc.
+            Three products from one operator. EMC. Dell. U.S. Navy. Union Bank. DreamWorks. Now Npire.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
@@ -82,7 +81,7 @@ export default function NpireHome() {
               href="#products"
               className="inline-flex items-center justify-center gap-2 px-6 h-11 text-base font-medium rounded-lg border border-border hover:bg-accent transition-colors"
             >
-              Browse all products
+              See products
             </a>
           </div>
         </section>
@@ -92,8 +91,7 @@ export default function NpireHome() {
           <div className="text-center mb-12">
             <Badge variant="outline" className="mb-4">Products</Badge>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              {/* Placeholder section title */}
-              Three tools. One studio.
+              Three products. One operator.
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -132,7 +130,7 @@ export default function NpireHome() {
                         {product.blurb}
                       </p>
                       <div className="flex items-center gap-1 text-xs font-medium text-primary group-hover:gap-2 transition-all">
-                        Learn more
+                        {product.cta}
                         <ArrowRight className="h-3 w-3" />
                       </div>
                     </CardContent>
@@ -143,16 +141,26 @@ export default function NpireHome() {
           </div>
         </section>
 
-        {/* ── Founder section (placeholder) ─────────────────────────────── */}
-        <section className="px-6 py-16 max-w-3xl mx-auto">
-          <div className="rounded-lg border border-dashed border-border bg-muted/30 p-8 text-center">
-            <p className="text-xs uppercase tracking-wider text-muted-foreground/60 mb-3">
-              Placeholder — founder section
+        {/* ── Founder section ─────────────────────────────────────────── */}
+        <section className="px-6 py-20 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">
+            Behind Npire
+          </h2>
+          <div className="space-y-5 text-base text-muted-foreground leading-relaxed">
+            <p>
+              A UX architect whose track record spans Combat Information
+              Center human factors for the U.S. Navy at SPAWAR, full-stack
+              UX leadership for Dell&rsquo;s flagship enterprise capture
+              platform, design leadership across Union Bank&rsquo;s mobile
+              and wealth platforms, and consulting research for DreamWorks
+              Animation. Co-inventor on U.S. Patent 7,783,983. UC San
+              Diego, B.A. Cognitive Science.
             </p>
-            <p className="text-sm text-muted-foreground italic leading-relaxed">
-              CW is drafting the founder bio + photo placement separately.
-              This block is structural; real copy lands when the brief is
-              delivered.
+            <p>
+              Npire products are built solo on AI-native infrastructure.
+              No marketing department. No design committee. One operator
+              who&rsquo;s seen what works at scale &mdash; now shipping at
+              AI-native speed.
             </p>
           </div>
         </section>
