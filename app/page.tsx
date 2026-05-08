@@ -5,14 +5,14 @@ import { UmbrellaNav } from "@/components/umbrella-nav";
 import { UmbrellaFooter } from "@/components/umbrella-footer";
 import {
   LAYERS_URL,
-  BENCHMARK_URL,
   SUPPORT_EMAIL,
 } from "@/lib/site-config";
 
-// Per-card CTA-link helpers. Layers + Benchmark are live (link to their
-// landing pages, where each page has its own primary CTA). Ambassador
-// is still pre-page and routes to a focused mailto.
+// Per-card CTA-link helpers. Layers is live; Ambassador and Benchmark
+// route to a focused mailto until the dedicated subdomains ship with
+// real content (Benchmark currently scaffold-only).
 const AMBASSADOR_EARLY_ACCESS = `mailto:${SUPPORT_EMAIL}?subject=Ambassador%20early%20access`;
+const BENCHMARK_SAMPLE_AUDIT = `mailto:${SUPPORT_EMAIL}?subject=Benchmark%20sample%20audit`;
 
 const PRODUCTS = [
   {
@@ -47,9 +47,9 @@ const PRODUCTS = [
       "An AI agent runs your exact task as your exact persona across your competitors' websites and tells you what it perceived — ranked by friction, scored on the UI Clutter Index, the first standardized metric built for competitive UX comparison.",
     icon: BarChart3,
     accent: "#9333ea",
-    status: "Public beta",
-    href: BENCHMARK_URL,
-    cta: "See Benchmark",
+    status: "Coming soon",
+    href: BENCHMARK_SAMPLE_AUDIT,
+    cta: "Request a sample audit",
   },
 ] as const;
 
@@ -65,7 +65,7 @@ export default function NpireHome() {
             Built by an operator
           </Badge>
           <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
-            AI-native tools, built with thirty years of UX rigor.
+            AI-native tools, built with twenty years of UX rigor.
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
             Three products from one operator. EMC. Dell. U.S. Navy. Union Bank. DreamWorks. Now Npire.
