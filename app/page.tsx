@@ -5,14 +5,12 @@ import { UmbrellaNav } from "@/components/umbrella-nav";
 import { UmbrellaFooter } from "@/components/umbrella-footer";
 import {
   LAYERS_URL,
+  BENCHMARK_URL,
   SUPPORT_EMAIL,
 } from "@/lib/site-config";
 
-// Per-card CTA-link helpers. Layers is live; Ambassador and Benchmark
-// route to a focused mailto until the dedicated subdomains ship with
-// real content (Benchmark currently scaffold-only).
+// Ambassador routes to early-access mailto until the subdomain ships.
 const AMBASSADOR_EARLY_ACCESS = `mailto:${SUPPORT_EMAIL}?subject=Ambassador%20early%20access`;
-const BENCHMARK_SAMPLE_AUDIT = `mailto:${SUPPORT_EMAIL}?subject=Benchmark%20sample%20audit`;
 
 const PRODUCTS = [
   {
@@ -32,7 +30,7 @@ const PRODUCTS = [
     name: "Ambassador",
     tagline: "Your AI in the meeting. Openly disclosed.",
     blurb:
-      "An AI meeting proxy that joins your Meet, Zoom, or Teams calls, listens in real time, and responds in your cloned voice — under your live override from your phone. For operators stuck in too many low-leverage conversations.",
+      "An AI meeting proxy that joins your Meet, Zoom, or Teams calls, listens in real time, and surfaces suggested responses through your phone — so you stay present and in control without being the bottleneck for every routine question. For operators stuck in too many low-leverage conversations.",
     icon: Compass,
     accent: "#15803d",
     status: "Coming soon",
@@ -47,9 +45,9 @@ const PRODUCTS = [
       "An AI agent runs your exact task as your exact persona across your competitors' websites and tells you what it perceived — ranked by friction, scored on the UI Clutter Index, the first standardized metric built for competitive UX comparison.",
     icon: BarChart3,
     accent: "#9333ea",
-    status: "Coming soon",
-    href: BENCHMARK_SAMPLE_AUDIT,
-    cta: "Request a sample audit",
+    status: "Now available",
+    href: BENCHMARK_URL,
+    cta: "See Benchmark",
   },
 ] as const;
 
@@ -65,7 +63,7 @@ export default function NpireHome() {
             Built by an operator
           </Badge>
           <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
-            AI-native tools, built with twenty years of UX rigor.
+            AI-native tools, built with thirty years of UX rigor.
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
             Three products from one operator. EMC. Dell. U.S. Navy. Union Bank. DreamWorks. Now Npire.
@@ -117,7 +115,7 @@ export default function NpireHome() {
                           />
                         </div>
                         <Badge
-                          variant={product.status === "Public beta" ? "secondary" : "outline"}
+                          variant={product.status === "Coming soon" ? "outline" : "secondary"}
                           className="text-[10px]"
                         >
                           {product.status}
