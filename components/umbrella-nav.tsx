@@ -1,4 +1,4 @@
-import { Layers, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { BRAND_NAME, LAYERS_URL, BENCHMARK_URL, DASHBOARD_URL, SUPPORT_EMAIL } from "@/lib/site-config";
 
 const AMBASSADOR_EARLY_ACCESS = `mailto:${SUPPORT_EMAIL}?subject=Ambassador%20early%20access`;
@@ -12,15 +12,10 @@ const NAV_LINKS = [
 export function UmbrellaNav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 h-16 border-b border-border/50 bg-background/80 backdrop-blur-md">
-      <a href="/" className="flex items-center gap-3">
-        <div className="w-7 h-7 rounded bg-primary flex items-center justify-center shrink-0">
-          <Layers className="h-4 w-4 text-primary-foreground" />
-        </div>
-        <span className="flex flex-col leading-tight gap-0.5">
-          <span className="font-semibold text-base tracking-tight">{BRAND_NAME}</span>
-          <span className="hidden sm:inline text-sm text-muted-foreground tracking-tight">
-            Software for the work, not the demo.
-          </span>
+      <a href="/" className="flex flex-col leading-tight gap-0.5">
+        <span className="font-semibold text-base tracking-tight">{BRAND_NAME}</span>
+        <span className="hidden sm:inline text-sm text-muted-foreground tracking-tight">
+          Software for the work, not the demo.
         </span>
       </a>
       <nav className="hidden md:flex items-center gap-10 text-base text-muted-foreground">
