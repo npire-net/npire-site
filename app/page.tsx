@@ -6,11 +6,8 @@ import { UmbrellaFooter } from "@/components/umbrella-footer";
 import {
   LAYERS_URL,
   BENCHMARK_URL,
-  SUPPORT_EMAIL,
+  AMBASSADOR_URL,
 } from "@/lib/site-config";
-
-// Ambassador routes to early-access mailto until the subdomain ships.
-const AMBASSADOR_EARLY_ACCESS = `mailto:${SUPPORT_EMAIL}?subject=Ambassador%20early%20access`;
 
 const PRODUCTS = [
   {
@@ -34,8 +31,8 @@ const PRODUCTS = [
     icon: Compass,
     accent: "#15803d",
     status: "Coming soon",
-    href: AMBASSADOR_EARLY_ACCESS,
-    cta: "Early access",
+    href: AMBASSADOR_URL,
+    cta: "Learn more",
   },
   {
     slug: "benchmark",

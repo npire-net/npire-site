@@ -5,13 +5,12 @@ import {
   SUPPORT_EMAIL,
   LAYERS_URL,
   BENCHMARK_URL,
+  AMBASSADOR_URL,
 } from "@/lib/site-config";
-
-const AMBASSADOR_EARLY_ACCESS = `mailto:${SUPPORT_EMAIL}?subject=Ambassador%20early%20access`;
 
 const FOOTER_LINKS = [
   { label: "Layers", href: LAYERS_URL },
-  { label: "Ambassador", href: AMBASSADOR_EARLY_ACCESS },
+  { label: "Ambassador", href: AMBASSADOR_URL },
   { label: "Benchmark", href: BENCHMARK_URL },
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },

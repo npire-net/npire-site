@@ -1,11 +1,9 @@
 import { ArrowRight } from "lucide-react";
-import { BRAND_NAME, LAYERS_URL, BENCHMARK_URL, DASHBOARD_URL, SUPPORT_EMAIL } from "@/lib/site-config";
-
-const AMBASSADOR_EARLY_ACCESS = `mailto:${SUPPORT_EMAIL}?subject=Ambassador%20early%20access`;
+import { BRAND_NAME, LAYERS_URL, BENCHMARK_URL, AMBASSADOR_URL, DASHBOARD_URL } from "@/lib/site-config";
 
 const NAV_LINKS = [
   { label: "Layers", href: LAYERS_URL, external: true },
-  { label: "Ambassador", href: AMBASSADOR_EARLY_ACCESS, external: false },
+  { label: "Ambassador", href: AMBASSADOR_URL, external: true },
   { label: "Benchmark", href: BENCHMARK_URL, external: true },
 ];
 
