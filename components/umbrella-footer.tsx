@@ -26,21 +26,21 @@ export function UmbrellaFooter() {
           </div>
           <span className="text-sm font-semibold">{BRAND_NAME}</span>
           <Separator orientation="vertical" className="h-4 mx-2" />
-          <span className="text-xs text-muted-foreground">© {new Date().getFullYear()}</span>
+          <span className="text-sm text-muted-foreground">© {new Date().getFullYear()}</span>
         </div>
         <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 justify-center">
           {FOOTER_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {link.label}
             </a>
           ))}
           <a
             href={`mailto:${SUPPORT_EMAIL}`}
-            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             {SUPPORT_EMAIL}
           </a>

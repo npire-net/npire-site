@@ -113,19 +113,19 @@ export default function NpireHome() {
                         </div>
                         <Badge
                           variant={product.status === "Coming soon" ? "outline" : "secondary"}
-                          className="text-[10px]"
+                          className="text-xs"
                         >
                           {product.status}
                         </Badge>
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold">{product.name}</h3>
-                        <p className="text-xs text-muted-foreground">{product.tagline}</p>
+                        <p className="text-sm text-muted-foreground">{product.tagline}</p>
                       </div>
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         {product.blurb}
                       </p>
-                      <div className="flex items-center gap-1 text-xs font-medium text-primary group-hover:gap-2 transition-all">
+                      <div className="flex items-center gap-1 text-sm font-medium text-primary group-hover:gap-2 transition-all">
                         {product.cta}
                         <ArrowRight className="h-3 w-3" />
                       </div>
