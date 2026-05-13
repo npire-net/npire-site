@@ -148,9 +148,8 @@ export default function NpireHome() {
               Center human factors for the U.S. Navy at SPAWAR, full-stack
               UX leadership for Dell&rsquo;s flagship enterprise capture
               platform, design leadership across Union Bank&rsquo;s mobile
-              and wealth platforms, and consulting research for DreamWorks
-              Animation. Co-inventor on U.S. Patent 7,783,983. UC San
-              Diego, B.A. Cognitive Science.
+              and wealth platforms, and consulting research and design for DreamWorks
+              Animation. UC San Diego, B.A. Cognitive Science.
             </p>
             <p>
               Npire products are built solo on AI-native infrastructure.
