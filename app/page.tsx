@@ -122,7 +122,7 @@ export default function NpireHome() {
                         <h3 className="text-lg font-semibold">{product.name}</h3>
                         <p className="text-sm text-muted-foreground">{product.tagline}</p>
                       </div>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <p className="text-xl text-muted-foreground leading-relaxed">
                         {product.blurb}
                       </p>
                       <div className="flex items-center gap-1 text-sm font-medium text-primary group-hover:gap-2 transition-all">
