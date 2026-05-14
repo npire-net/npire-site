@@ -19,8 +19,8 @@ export default function TermsPage() {
             </p>
             <p>
               For questions:{" "}
-              <a href="mailto:hello@npire.net" className="text-foreground hover:underline">
-                hello@npire.net
+              <a href="mailto:support@npire.net" className="text-foreground hover:underline">
+                support@npire.net
               </a>
             </p>
           </div>
